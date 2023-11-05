@@ -1,0 +1,17 @@
+name: deploy workflow
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    container: 
+      steps:
+        - name: testing
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            port: ${{ secrets.PORT }}
+            script: |
