@@ -6,11 +6,8 @@
 #there should be a total of 9 lines
 FROM node:10-alpine
 EXPOSE 8080
-RUN apk add --no-cache shadow 
-RUN useradd -ms /bin/bash node
 RUN mkdir -p home/node/app && chown -R node:node home/node/app
 WORKDIR /home/node/app
-COPY . .
 USER node
 COPY package.json .
 RUN npm i
