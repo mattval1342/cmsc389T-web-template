@@ -5,6 +5,7 @@
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
 FROM node:10-alpine
+EXPOSE 8080
 RUN pwd
 RUN mkdir -p D:/ENEE400/app 
 WORKDIR D:/ENEE400/app
@@ -12,4 +13,3 @@ USER node
 RUN npm i
 COPY . .
 CMD ["node", "app.js"]
-EXPOSE 8080
