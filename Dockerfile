@@ -8,7 +8,7 @@ FROM node:10-alpine
 RUN pwd
 RUN mkdir -p D:/ENEE400/app 
 WORKDIR D:/ENEE400/app
-# USER node
+USER node
 RUN npm i
 COPY . .
 CMD ["node", "app.js"]
