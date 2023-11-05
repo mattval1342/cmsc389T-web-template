@@ -2,9 +2,15 @@ version: '3'
 
 services:
   nodejs:
-    #fill out the configuration here
+    image: node:latest
+    container_name: nodejs
     networks:
       - app-network
+    volumes: 
+      - ./app:/app
+    ports:
+      - "8080:80"
+    
   
   #the nginx configuration is given below
   #the website will run on localhost:80 
