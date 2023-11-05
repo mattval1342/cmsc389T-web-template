@@ -8,12 +8,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: node:latest
+    image: node-web-app
     container_name: nodejs
+    restart: unless-stopped
     networks:
     - app-network
-    volumes: 
-    - ./app:/app
 
   webserver:
     image: nginx:mainline-alpine
@@ -36,7 +35,6 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      #fill out your absolute path to your folder here
       device: D:\ENEE400\proj3\cmsc389T-web-template
       o: bind
 

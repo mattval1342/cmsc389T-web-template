@@ -6,8 +6,8 @@ jobs:
     name: Clone
     runs-on: ubuntu-latest
     steps:
-      - name: Clone
-        uses: mattval1342/ssh-action@master
+      - name: testing
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}

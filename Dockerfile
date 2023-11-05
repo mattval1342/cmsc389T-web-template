@@ -5,12 +5,11 @@
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
 FROM node:10-alpine
-EXPOSE 8080
 RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
-WORKDIR /home/node/app
+WORKDIR /home/node-10/app
+COPY package.json ./
 USER node
-COPY package.json .
-RUN npm i
-WORKDIR D:/ENEE400/app
+RUN npm install
 COPY --chown=node:node . .
+EXPOSE 8080
 CMD ["node", "app.js"]
