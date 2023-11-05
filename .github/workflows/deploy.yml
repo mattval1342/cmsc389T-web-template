@@ -1,4 +1,4 @@
-name: deploy workflow
+name: deploy-workflow
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
@@ -15,3 +15,5 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
             script: |
+              cd ../pub
+              git pull
