@@ -11,7 +11,7 @@ jobs:
         run: |
           docker build -t node-web-app .
           docker run --name "website" -p 80:8080 -d node-web-app
-          wget -O test.html localhost:80
+          wget -O index.html localhost:80
   
   docker-compose:
     runs-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
           sed -i "s/device:.*/device: $(pwd | sed 's/\//\\\//g')/g" docker-compose.yml
           cat docker-compose.yml
           docker-compose up -d
-          wget -O test.html localhost:80
+          wget -O index.html localhost:80
           
