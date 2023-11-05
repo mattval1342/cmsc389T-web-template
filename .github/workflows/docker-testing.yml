@@ -12,7 +12,7 @@ jobs:
           sed -i "s/device:.*/device: $(pwd | sed 's/\//\\\//g')/g" docker-compose.yml
           cat docker-compose.yml
           docker-compose up -d
-          wget -O index.html localhost:80
+          wget -O index.html 127.0.0.1:80
   build-website:
     runs-on: ubuntu-latest
     steps:
