@@ -5,7 +5,7 @@
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
 FROM node:10-alpine
-RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+RUN mkdir -p /home/node-10/app && chown -R node:node /home/node-10/app
 WORKDIR /home/node-10/app
 COPY package.json ./
 USER node
